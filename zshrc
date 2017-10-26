@@ -2,12 +2,18 @@ ANTIBODY_HOME=$HOME/.zsh-antibody
 setopt PROMPT_SUBST
 source <(antibody init)
 antibody bundle < $ANTIBODY_HOME/plugins.txt
-source $ANTIBODY_HOME/functions.zsh
+
+for file in $ANTIBODY_HOME/lib/*.zsh; do
+	source $file
+done
 
 export PATH=$HOME/bin:$PATH
 export EDITOR=vim
 
 export FZF_DEFAULT_COMMAND='rg --files --no-ignore --hidden --follow --glob "!.git/*"'
+
+bindkey '^[[A' history-substring-search-up
+bindkey '^[[B' history-substring-search-down
 
 
 if [ -d $HOME/.rbenv ]; then
