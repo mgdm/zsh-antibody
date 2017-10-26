@@ -20,12 +20,12 @@ if [ -d $HOME/.rbenv ]; then
 	eval "$(rbenv init - --no-rehash)"
 fi
 
-if [ -d $HOME/.nvm ]; then
-    export NVM_DIR="$HOME/.nvm"
-    . "$(brew --prefix nvm)/nvm.sh" --no-use
-    alias node='unalias node ; unalias npm ; nvm use default ; node $@'
-    alias npm='unalias node ; unalias npm ; nvm use default ; npm $@'
-fi
+#if [ -d $HOME/.nvm ]; then
+#    export NVM_DIR="$HOME/.nvm"
+#    . "$(brew --prefix nvm)/nvm.sh" --no-use
+#    alias node='unalias node ; unalias npm ; nvm use default ; node $@'
+#    alias npm='unalias node ; unalias npm ; nvm use default ; npm $@'
+#fi
 
 if [ -d $HOME/.phpbrew ]; then
 	source $HOME/.phpbrew/bashrc
